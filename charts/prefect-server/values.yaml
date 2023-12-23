@@ -76,7 +76,10 @@ server:
     # -- target Memory utilization percentage
     targetMemory: 80
 
-  # -- number of server replicas to deploy
+  # -- Number of server replicas to deploy.
+  #    Set to a specific number to define the replica count.
+  #    Set to 'nil' to omit the replica count, useful when using HPA (Horizontal Pod Autoscaler)
+  #    and avoiding conflicts with deployment tools like ArgoCD.
   replicaCount: 1
 
   # requests MUST be specified if using an HPA, otherwise the HPA will not know when to trigger a scale event
